@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Oct 01 10:07:25 2017
+
+@author: Jitendra Gaur
+"""
+'''Python
+
+import pandas as pd
+import ibm_db
+ibm_db_conn = ibm_db.connect("DATABASE="+"BLUDB"+";HOSTNAME="+"awh-yp-small02.services.dal.bluemix.net"+";PORT="+"50000"+";PROTOCOL=TCPIP;UID="+"username"+";PWD="+"password"+";", "","")
+import ibm_db_dbi
+conn = ibm_db_dbi.Connection(ibm_db_conn)
+
+df = pd.read_csv('C:/Users/IBM_ADMIN/Documents/Project/CAI Offering/test.csv')
+#df=pd.read_sql("SELECT * FROM ACCOUNT",conn)
+
+
+#%%
+query = "Delete from TEST"
+print query
+stmt = ibm_db.exec_immediate(ibm_db_conn, query)
+print stmt
+#%%
+
+for i in xrange(0,len(df)):
+    query = "INSERT INTO TEST (EMAILID, TIMESTAMP, OFFERING1, OFFERING2, OFFERING3, OS, LOCATION, DOCUMENT) VALUES('"+df.EMAILID[i]+"','"+df.TIMESTAMP[i]+"','"+df.OFFERING1[i]+"','"+df.OFFERING2[i]+"','"+df.OFFERING3[i]+"','"+df.OS[i]+"','"+df.LOCATION[i]+"','"+df.DOCUMENT[i]+"')"
+    print query
+    stmt = ibm_db.exec_immediate(ibm_db_conn, query)
+    #print stmt
+
+#%%
+
+#%%
+df.to_sql(name='TEST_TABLE', con=conn, flavor=None, schema='SCHEMA1', if_exists='append', index=True, index_label=None, chunksize=None, dtype=None)

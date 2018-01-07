@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 22 22:47:50 2016
+
+@author: Jitendra Gaur
+"""
+
+projectPath = 'C:/Users/IBM_ADMIN/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles'
+import os
+#import time
+import json
+import pandas as pd
+from fuzzywuzzy import fuzz
+#%%
+os.chdir(projectPath)
+
+#%%
+df_structure = pd.read_csv("C:/Users/IBM_ADMIN/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles/Structured data - FirstAMtest1.csv")
+df_alchemy = pd.read_csv("C:/Users/IBM_ADMIN/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles/Alchemy_entities.csv")
+
+d = {'Tracker' : range(0,600000)}
+df_text_new = pd.DataFrame(d)
+df_text_new['File_name'] = ''
+df_text_new['Alchemy_BORROWER_FULL_NAME'] = ''
+z=0
+#%%
+
+for i in xrange(0,2):
+    x=''
+    y=''
+    w=''
+    test = df_structure.Filename[i]
+    j = 0
+    for j in df_alchemy.index:    
+        if test == df_alchemy.Filename[j]:
+            if df_text_new.Alchemy_BORROWER_FULL_NAME[z] == '':
+                if df_alchemy.Type[j] == "Company" or df_alchemy.Type[j]  == "Person" or df_alchemy.Type[j]  == "Organization":
+                    for k in range(0,3):
+                        if k==0:
+                            ratio=80
+                        elif k==1:
+                            ratio=70
+                        else:
+                            ratio=65                        
+                        if x == '':
+                            if fuzz.token_set_ratio(df_structure.BORROWER_FULL_NAME[i], df_alchemy.Text[j]) >= ratio:            
+                                x = str(df_alchemy.Text[j])
+                                print x
+                                df_text_new.Alchemy_BORROWER_FULL_NAME[z] = x
+                                df_text_new.File_name[z] = df_structure.Filename[i]
+                        if y == '':
+                            if fuzz.token_set_ratio(df_structure.BORROWER_FULL_NAME[i], df_alchemy.Text[j]) >= ratio and fuzz.token_set_ratio(x, df_alchemy.Text[j]) < 80:
+                                y = str(df_alchemy.Text[j])
+                                print y
+                                df_text_new.Alchemy_BORROWER_FULL_NAME[z] = y
+                                df_text_new.File_name[z] = df_structure.Filename[i]
+                        if w == '':
+                            if fuzz.token_set_ratio(df_structure.BORROWER_FULL_NAME[i], df_alchemy.Text[j]) >= ratio and fuzz.token_set_ratio(x, df_alchemy.Text[j]) < 80 and fuzz.token_set_ratio(y, df_alchemy.Text[j]) < 80:
+                                w = str(df_alchemy.Text[j])
+                                print w
+                                df_text_new.Alchemy_BORROWER_FULL_NAME[z] = w
+                                df_text_new.File_name[z] = df_structure.Filename[i]
+                z=z+1
+    #print 'Run - ' + str(j+1) + ' | Alchemy API Calls - ' + str(ctr)
+    
+    
+    
+#%%
+
+
+#%%
+df_ents.to_csv('Alchemy_entities1.csv')

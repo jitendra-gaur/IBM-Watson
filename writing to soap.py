@@ -25,8 +25,8 @@ body = """<?xml version="1.0" encoding="UTF-8"?>
    <soapenv:Header>
       <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
          <wsse:UsernameToken wsu:Id="UsernameToken-1767AEF7A6DA79525B15012351006126">
-            <wsse:Username>arunava.saha@in.ibm.com</wsse:Username>
-            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">Oracle123</wsse:Password>
+            <wsse:Username>Username</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">Password</wsse:Password>
             <wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">lwS3jzwrhY8hVnNd7dLHzg==</wsse:Nonce>
             <wsu:Created>"""+str(timestamp)+"""</wsu:Created>
          </wsse:UsernameToken>

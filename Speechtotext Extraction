@@ -7,7 +7,7 @@ Created on Thu Nov 23 16:29:24 2017
 """
 
 
-projectPath = 'C:/Users/IBM_ADMIN/Downloads/curl_7_53_1_openssl_nghttp2_x64'
+projectPath = 'C:/Users/Downloads/curl_7_53_1_openssl_nghttp2_x64'
 import os
 #import time
 #import json
@@ -17,7 +17,7 @@ import json
 
 #%%
 os.chdir(projectPath)
-doc_text = open("C:/Users/IBM_ADMIN/Downloads/curl_7_53_1_openssl_nghttp2_x64/Vacations.txt").read()
+doc_text = open("C:/Users/Downloads/curl_7_53_1_openssl_nghttp2_x64/Vacations.txt").read()
 doc_text1 = json.loads(doc_text)
 
 #df_text = pd.DataFrame(doc_text)

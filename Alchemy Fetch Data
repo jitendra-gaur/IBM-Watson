@@ -5,7 +5,7 @@ Created on Tue Nov 22 22:47:50 2016
 @author: Jitendra Gaur
 """
 
-projectPath = 'C:/Users/IBM_ADMIN/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles'
+projectPath = 'C:/Users/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles'
 import os
 #import time
 import json
@@ -15,8 +15,8 @@ from fuzzywuzzy import fuzz
 os.chdir(projectPath)
 
 #%%
-df_structure = pd.read_csv("C:/Users/IBM_ADMIN/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles/Structured data - FirstAMtest1.csv")
-df_alchemy = pd.read_csv("C:/Users/IBM_ADMIN/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles/Alchemy_entities.csv")
+df_structure = pd.read_csv("C:/Users/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles/Structured data - FirstAMtest1.csv")
+df_alchemy = pd.read_csv("C:/Users/Downloads/onlyMLPOCTextFiles/onlyMLPOCTextFiles/Alchemy_entities.csv")
 
 d = {'Tracker' : range(0,600000)}
 df_text_new = pd.DataFrame(d)

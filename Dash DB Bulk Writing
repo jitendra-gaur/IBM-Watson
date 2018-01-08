@@ -12,7 +12,7 @@ ibm_db_conn = ibm_db.connect("DATABASE="+"BLUDB"+";HOSTNAME="+"awh-yp-small02.se
 import ibm_db_dbi
 conn = ibm_db_dbi.Connection(ibm_db_conn)
 
-df = pd.read_csv('C:/Users/IBM_ADMIN/Documents/Project/CAI Offering/test.csv')
+df = pd.read_csv('C:/Users/Documents/Project/CAI Offering/test.csv')
 #df=pd.read_sql("SELECT * FROM ACCOUNT",conn)
 
 

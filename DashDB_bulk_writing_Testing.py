@@ -2,19 +2,19 @@
 """
 Created on Sun Oct 01 10:07:25 2017
 
-@author: IBM_ADMIN
+@author: Jitendra Gaur
 """
 
 import pandas as pd
 import ibm_db
-ibm_db_conn = ibm_db.connect("DATABASE="+"BLUDB"+";HOSTNAME="+"awh-yp-small02.services.dal.bluemix.net"+";PORT="+"50000"+";PROTOCOL=TCPIP;UID="+"dash111407"+";PWD="+"z_AOy_v0H5Ja"+";", "","")
+ibm_db_conn = ibm_db.connect("DATABASE="+"BLUDB"+";HOSTNAME="+"awh-yp-small02.services.dal.bluemix.net"+";PORT="+"50000"+";PROTOCOL=TCPIP;UID="+"username"+";PWD="+"password"+";", "","")
 import ibm_db_dbi
 conn = ibm_db_dbi.Connection(ibm_db_conn)
 
-df = pd.read_csv('C:/Users/IBM_ADMIN/Documents/Project/CAI Offering/testing1.csv')
-#df = pd.read_csv('C:/Users/IBM_ADMIN/Documents/Project/CAI Offering/test.csv')
+df = pd.read_csv('C:/Users/Documents/testing1.csv')
+#df = pd.read_csv('C:/Users/Documents/test.csv')
 #df=pd.read_sql("SELECT * FROM ACCOUNT_LEADERS",conn)
-#df = pd.read_csv('C:/Users/IBM_ADMIN/Documents/Project/CAI Offering/CAI_Pipeline_28Sep17.csv')
+#df = pd.read_csv('C:/Users/Documents/CAI_Pipeline_28Sep17.csv')
 
 #%%
 query = "Delete from TEST1"

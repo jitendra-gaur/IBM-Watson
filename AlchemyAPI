@@ -5,7 +5,7 @@ Created on Tue Nov 22 12:47:33 2016
 @author: Jitendra Gaur
 """
 
-projectPath = 'C:/Users/IBM_ADMIN/Downloads/out'
+projectPath = 'C:/Users/Downloads/out'
 import os
 import time
 #import json
@@ -16,7 +16,7 @@ from fuzzywuzzy import fuzz
 os.chdir(projectPath)
 alchemyapi = AlchemyAPI()
 #%%
-doc_text = pd.read_csv("C:/Users/IBM_ADMIN/Documents/Project/Structured data.csv")
+doc_text = pd.read_csv("C:/Users/Documents/Project/Structured data.csv")
 c = {'File_Name' : doc_text.Filename, 'BORROWER_FULL_NAME' : doc_text.BORROWER_FULL_NAME}
 df_text = pd.DataFrame(c, columns = ['File_Name', 'BORROWER_FULL_NAME'])
 df_text['Alchemy_BORROWER_FULL_NAME'] = ''
@@ -28,7 +28,7 @@ for j in range(0,4):
         if df_text.Alchemy_BORROWER_FULL_NAME[i] == '':
             if j == 3:
                 #time.sleep(30)
-                doc_file = open("C:/Users/IBM_ADMIN/Downloads/out/" + str(df_text.File_Name[i])).read()
+                doc_file = open("C:/Users/Downloads/out/" + str(df_text.File_Name[i])).read()
                 demo_text = doc_file
                 demo_text = demo_text.decode('utf-8')
 #            print str(df_text.File_Name[i])
@@ -43,4 +43,4 @@ for j in range(0,4):
             df_text.Alchemy_BORROWER_FULL_NAME[i] = x
 
 #%%
-df_text.to_csv('C:/Users/IBM_ADMIN/Documents/Project/Alchemy_result1.csv')
+df_text.to_csv('C:/Users/Documents/Project/Alchemy_result1.csv')

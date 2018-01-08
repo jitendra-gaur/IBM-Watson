@@ -9,7 +9,7 @@ import pandas as pd
 from watson_developer_cloud import LanguageTranslatorV2 as LanguageTranslator
 
 #Reading data from excel file
-df = pd.read_excel(open('C:\Users\IBM_ADMIN\Documents\Project\OTIS\Manoj_Part Center Cdty Code_uniqe.xlsx','rb'), sheetname='Without Duplicates')
+df = pd.read_excel(open('C:\Users\Center Cdty Code_uniqe.xlsx','rb'), sheetname='Without Duplicates')
 #%%
 #Creating dataframe
 d = {'S.No.' : range(0,20000)}
@@ -22,7 +22,7 @@ df_text_new['Product_Desc_French'] = ''
 #%%
 #Authentication for WLT API
 
-language_translator = LanguageTranslator(username='f86aed4d-a3ce-4b36-aa7a-7ded4ba8a4f8', password='cFxxnNuVRbX1')
+language_translator = LanguageTranslator(username='username', password='password')
 #%%
 
 product_desc_fr = []

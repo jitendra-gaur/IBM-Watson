@@ -16,8 +16,8 @@ import requests
 
 
 
-df = pd.read_excel(open('C:\Users\IBM_ADMIN\Documents\Project\OTIS\Manoj_Part Center Cdty Code_uniqe.xlsx','rb'), sheetname='Without Duplicates')
-df1 = pd.read_excel(open('C:\Users\IBM_ADMIN\Documents\Project\OTIS\Manoj_Part Center Cdty Code_uniqe.xlsx','rb'), sheetname='Without Duplicates')
+df = pd.read_excel(open('C:\Users\Documents\Manoj_Part Center Cdty Code_uniqe.xlsx','rb'), sheetname='Without Duplicates')
+df1 = pd.read_excel(open('C:\Users\Documents\Manoj_Part Center Cdty Code_uniqe.xlsx','rb'), sheetname='Without Duplicates')
 #%%
 d = {'S.No.' : range(0,20000)}
 df_text_new = pd.DataFrame(d)
@@ -32,9 +32,7 @@ df_text_new['Product_Desc_German'] = ''
        
 
 #%%
-#language_translator = LanguageTranslator(username='3989597c-bace-4c02-a849-ed968d9eba61', password='rmOkeFQWkrda')
-#language_translator = LanguageTranslator(username='f86aed4d-a3ce-4b36-aa7a-7ded4ba8a4f8', password='cFxxnNuVRbX1')
-language_translator = LanguageTranslator(username='b233be06-ff1d-4773-bff5-20b7e68cca35', password='RwQjpnUVV3lY')
+language_translator = LanguageTranslator(username='username', password='password')
 #%%
 for i in range(0,10000):
     df.drop([i], inplace= True)
@@ -90,7 +88,7 @@ df_text_new.to_csv('translation_German_2.csv', encoding='utf-8')
 df1.to_csv('skipped2.csv', encoding='utf-8')
 #%%
 # Open File
-resultFyle = open("C:/Users/IBM_ADMIN/Desktop/translation1.csv",'wb')
+resultFyle = open("C:/Users/Desktop/translation1.csv",'wb')
 
 # Create Writer Object
 wr = csv.writer(resultFyle, dialect='excel')

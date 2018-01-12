@@ -66,7 +66,8 @@ for i in range(0,10000):
 
 #%%
 # Writing details to data frame
-# Writing details to data frame
+# try catch block to continue executing the loop
+
 
 j = 0
 for j in range(0,10000):

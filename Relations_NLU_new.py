@@ -19,8 +19,8 @@ import watson_developer_cloud.natural_language_understanding.features.v1 \
 #%%
 os.chdir(projectPath)
 natural_language_understanding = NaturalLanguageUnderstandingV1(
-  username="18200f6e-329c-4c7d-b791-8bdbc602af81",
-  password="8ayRfvOCoCfn",
+  username="username",
+  password="password",
   version="2017-02-27")
 #%%
 doc_text = pd.read_csv("C:/Users/IBM_ADMIN/Documents/Project/First American/copy txt files/copy txt files/harsh_remainingfiles_torunforrelations.csv")

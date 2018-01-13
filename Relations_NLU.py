@@ -39,7 +39,7 @@ ctr = 0
 #%%
 
 for i in range(0,10):
-    doc_file = open("C:/Users/IBM_ADMIN/Documents/Project/First American/copy txt files/copy txt files/" + str(df_text.Filename[i])).read()
+    doc_file = open("C:/Users/Documents/copy txt files/copy txt files/" + str(df_text.Filename[i])).read()
     demo_text = doc_file   
         
     print i
@@ -68,7 +68,7 @@ for i in range(0,10):
 #%%
         
 #%%
-df_ents.to_csv('Alchemy_entities_allrelations_firstbatch2_30Nov_harshremainingfiles.csv')
+df_ents.to_csv('Alchemy_entities_allrelations.csv')
 #%%    
 '''
 #Keyword Extraction 

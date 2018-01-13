@@ -5,7 +5,7 @@ Created on Tue Nov 22 22:47:50 2016
 @author: Jitendra Gaur
 """
 
-projectPath = 'C:/Users/IBM_ADMIN/Documents/Project/First American/copy txt files/copy txt files'
+projectPath = 'C:/Users/Documents/copy txt files/copy txt files'
 import os
 #import time
 #import json

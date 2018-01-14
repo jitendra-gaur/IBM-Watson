@@ -83,7 +83,7 @@ for i in range(0,5):
 
      
 #%%
-df_ents.to_csv('Alchemy_entities_allrelations_firstbatch2_30Nov_harshremainingfiles.csv')
+df_ents.to_csv('Alchemy_entities_allrelations_firstbatch2_30Nov_remainingfiles.csv')
 #%%    
 '''
 #Keyword Extraction 

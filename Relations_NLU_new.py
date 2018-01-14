@@ -23,7 +23,7 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
   password="password",
   version="2017-02-27")
 #%%
-doc_text = pd.read_csv("C:/Users/IBM_ADMIN/Documents/Project/First American/copy txt files/copy txt files/harsh_remainingfiles_torunforrelations.csv")
+doc_text = pd.read_csv("C:/Users/Documents/copy txt files/copy txt files/runforrelations.csv")
 df_text = pd.DataFrame(doc_text)
 d = {'Tracker' : range(0,800000)}
 df_ents = pd.DataFrame(d)
@@ -39,7 +39,7 @@ ctr = 0
 #%%
 
 for i in range(0,5):
-    doc_file = open("C:/Users/IBM_ADMIN/Documents/Project/First American/copy txt files/copy txt files/" + str(df_text.Filename[i])).read()
+    doc_file = open("C:/Users/Documents/Project/copy txt files/copy txt files/" + str(df_text.Filename[i])).read()
     demo_text = doc_file   
         
     print i

@@ -10,7 +10,7 @@ import time
 #%%
 i=0
 for i in range(0,365):
-    urllib2.urlopen("https://shanalyticsdatacaiapi.mybluemix.net/start").read()
+    urllib2.urlopen("https://abc.com/start").read()
     time.sleep(120)
     
 #%%
